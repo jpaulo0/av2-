@@ -1,0 +1,33 @@
+public class Main {
+    public static void main(String[] args) {
+        Animal[] animais = new Animal[5];
+
+        animais[0] = new Animal("cachorro", 3);
+        animais[1] = new Animal("gato", 7);
+        animais[2] = new Animal("girafa", 5);
+        animais[3] = new Animal("peixe", 2);
+        animais[4] = new Animal("rato", 4);
+
+        double somaIdades = 0.0;
+
+        System.out.println("Animais com mais de 5 anos:");
+        for (int i = 0; i < animais.length; i++) {
+            if (animais[i].idade > 5) {
+                System.out.println(animais[i].especie + " - " + animais[i].idade + " anos");
+            }
+            somaIdades += animais[i].idade;
+        }
+
+        double media = (double) somaIdades / animais.length;
+        System.out.println("Média das idades: " + media);
+    }
+}
+ class Animal {
+    String especie;
+    double idade;
+
+    public Animal(String especie, int idade) {
+        this.especie = especie;
+        this.idade = idade;
+    }
+}
